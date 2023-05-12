@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from pymongo import MongoClient
-
+from bson import ObjectId
 app = Flask(__name__)
 CORS(app)
 
@@ -20,9 +20,12 @@ def users():
     for element in collection:
         item = {
             'id': str(element['_id']),
-            'ho_ten': element['ho_ten'],
-            'nam_sinh': element['nam_sinh'],
-            'truong': element['truong']
+            'STT': element['STT'],
+            'Name': element['Name'],
+            'YearOfBirth': element['YearOfBirth'],
+            'Sex': element['Sex'],
+            'School': element['School'],
+            'Major': element['Major']
         }
         data.append(item)
 
@@ -30,14 +33,24 @@ def users():
 
 @app.route('/user', methods=['POST'])
 def save_user():
-    ho_ten = request.json['ho_ten']
-    nam_sinh = request.json['nam_sinh']
-    truong = request.json['truong']
+    Name = request.json['Name']
+    YearOfBirth = request.json['YearOfBirth']
+    School = request.json['School']
     user = {
-        'ho_ten': ho_ten,
-        'nam_sinh': nam_sinh,
-        'truong': truong
+        'Name': Name,
+        'YearOfBirth': YearOfBirth,
+        'School': School
     }
     db.users.insert_one(user)
 
     return jsonify({'status': 'success'})
+
+@app.route('/delete/<user_id>', methods=['POST'])
+def user():
+    if request.method == 'POST':
+        action = request.form['action']
+        user_id = request.form['user_id']
+
+        if action == 'delete':
+            db.users.delete_one({'_id': ObjectId(user_id)})
+            return jsonify({'status': 'success'})

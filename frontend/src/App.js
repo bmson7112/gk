@@ -9,47 +9,89 @@ function App() {
         return res.json()
       })
       .then((data) => {
-        setUsers(data)
+        const usersWithId = data.map((user, index) => ({ ...user, id: index }));
+        setUsers(usersWithId)
       })
   }, []);
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
+  const handleDelete = (userId) => {
+    fetch(`${backendURL}/delete/${userId}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ user_id: userId })
+    })
+      .then(res => res.json())
+      .then(data => {
+        setUsers(prevUsers => prevUsers.filter(user => user.id !== userId));
+        console.log(data);
+      });
+  };
 
-  //   const formData = new FormData(event.target);
-  //   const user = {
-  //     ho_ten: formData.get('ho_ten'),
-  //     nam_sinh: formData.get('nam_sinh'),
-  //     truong: formData.get('truong')
-  //   };
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  //   fetch(`${backendURL}/user`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(user)
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data);
-  //       // Do something with the response, e.g. show a success message
-  //     });
-  // };
+    const formData = new FormData(event.target);
+    const user = {
+      Name: formData.get('Name'),
+      YearOfBirth: formData.get('YearOfBirth'),
+      School: formData.get('School')
+    };
+
+    fetch(`${backendURL}/user`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      });
+  };
 
   return (
     <div>
       <h1>List of Users</h1>
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>
-            <div>{user.ho_ten}</div>
-            <div>{user.nam_sinh}</div>
-            <div>{user.truong}</div>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>School</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map(user => (
+            <tr key={user.id}>
+              <td>{user.Name}</td>
+              <td>{user.YearOfBirth}</td>
+              <td>{user.School}</td>
+              <td><button onClick={() => handleDelete(user.id)}>Delete</button></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
+      <h2>Add a User</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="Name">Họ tên:</label>
+          <input type="text" id="Name" name="Name" />
+        </div>
+        <div>
+          <label htmlFor="YearOfBirth">Năm sinh:</label>
+          <input type="text" id="YearOfBirth" name="YearOfBirth" />
+        </div>
+        <div>
+          <label htmlFor="School">Trường:</label>
+          <input type="text" id="School" name="School" />
+        </div>
+        <button type="submit">Save</button>
+      </form>
     </div>
   );
 }
