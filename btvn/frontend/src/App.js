@@ -1,55 +1,45 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
   const [users, setUsers] = useState([]);
-  const backendURL = process.env.REACT_APP_BACKEND_URL || "http://127.0.0.1:5000"
+  const backendURL = process.env.REACT_APP_BACKEND_URL || "http://127.0.0.1:5000";
   useEffect(() => {
-    fetch(`${backendURL}/users`)
+    axios.get(`${backendURL}/users`)
       .then((res) => {
-        return res.json()
+        const usersWithId = res.data.map((user, index) => ({ ...user, id: index }));
+        setUsers(usersWithId);
       })
-      .then((data) => {
-        const usersWithId = data.map((user, index) => ({ ...user, id: index }));
-        setUsers(usersWithId)
-      })
+      .catch((err) => console.log(err));
   }, []);
 
   const handleDelete = (userId) => {
-    fetch(`${backendURL}/delete/${userId}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ user_id: userId })
-    })
-      .then(res => res.json())
-      .then(data => {
+    axios.delete(`${backendURL}/user/${userId}`)
+      .then(res => {
         setUsers(prevUsers => prevUsers.filter(user => user.id !== userId));
-        console.log(data);
-      });
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
   };
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
     const user = {
+      STT: formData.get('STT'),
       Name: formData.get('Name'),
       YearOfBirth: formData.get('YearOfBirth'),
-      School: formData.get('School')
+      Sex: formData.get('Sex'),
+      School: formData.get('School'),
+      Major: formData.get('Major')
     };
 
-    fetch(`${backendURL}/user`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(user)
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-      });
+    axios.post(`${backendURL}/user`, user)
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -58,18 +48,24 @@ function App() {
       <table>
         <thead>
           <tr>
+            <th>STT</th>
             <th>Name</th>
             <th>Date of Birth</th>
+            <th>Sex</th>
             <th>School</th>
+            <th>Major</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
           {users.map(user => (
             <tr key={user.id}>
+              <td>{user.STT}</td>
               <td>{user.Name}</td>
               <td>{user.YearOfBirth}</td>
+              <td>{user.Sex}</td>
               <td>{user.School}</td>
+              <td>{user.Major}</td>
               <td><button onClick={() => handleDelete(user.id)}>Delete</button></td>
             </tr>
           ))}
@@ -78,6 +74,10 @@ function App() {
 
       <h2>Add a User</h2>
       <form onSubmit={handleSubmit}>
+      <div>
+          <label htmlFor="STT">STT:</label>
+          <input type="text" id="STT" name="STT" />
+        </div>
         <div>
           <label htmlFor="Name">Họ tên:</label>
           <input type="text" id="Name" name="Name" />
@@ -87,8 +87,16 @@ function App() {
           <input type="text" id="YearOfBirth" name="YearOfBirth" />
         </div>
         <div>
+          <label htmlFor="Sex">Sex:</label>
+          <input type="text" id="Sex" name="Sex" />
+        </div>
+        <div>
           <label htmlFor="School">Trường:</label>
           <input type="text" id="School" name="School" />
+        </div>
+        <div>
+          <label htmlFor="Major">Major:</label>
+          <input type="text" id="Major" name="Major" />
         </div>
         <button type="submit">Save</button>
       </form>

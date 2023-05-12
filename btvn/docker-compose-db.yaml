@@ -5,11 +5,11 @@ services:
         # image: mongo:5.0 
         build: ./db
         volumes:
-            - mongodata:/docker-entrypoint-initdb.d
-        environment:
-            MONGO_INITDB_ROOT_USERNAME: minhson
-            MONGO_INITDB_ROOT_PASSWORD: minhson
-            MONGO_INITDB_DATABASE: test_database
+            - ./db:/docker-entrypoint-initdb.d
+        # environment:
+        #     MONGO_INITDB_ROOT_USERNAME: minhson
+        #     MONGO_INITDB_ROOT_PASSWORD: minhson
+        #     MONGO_INITDB_DATABASE: test_database
         networks:
             - btvn_default
 volumes:
