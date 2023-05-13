@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './App.css'
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -7,7 +8,7 @@ function App() {
   useEffect(() => {
     axios.get(`${backendURL}/users`)
       .then((res) => {
-        const usersWithId = res.data.map((user, index) => ({ ...user, id: index }));
+        const usersWithId = res.data.map((user) => ({ ...user }));
         setUsers(usersWithId);
       })
       .catch((err) => console.log(err));
@@ -21,7 +22,7 @@ function App() {
       })
       .catch((err) => console.log(err));
   };
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -43,7 +44,8 @@ function App() {
   };
 
   return (
-    <div>
+    <div style={{display:'flex'}}>
+<div style={{flex: '1'}}>
       <h1>List of Users</h1>
       <table>
         <thead>
@@ -71,35 +73,37 @@ function App() {
           ))}
         </tbody>
       </table>
-
-      <h2>Add a User</h2>
-      <form onSubmit={handleSubmit}>
-      <div>
-          <label htmlFor="STT">STT:</label>
-          <input type="text" id="STT" name="STT" />
-        </div>
-        <div>
-          <label htmlFor="Name">Họ tên:</label>
-          <input type="text" id="Name" name="Name" />
-        </div>
-        <div>
-          <label htmlFor="YearOfBirth">Năm sinh:</label>
-          <input type="text" id="YearOfBirth" name="YearOfBirth" />
-        </div>
-        <div>
-          <label htmlFor="Sex">Sex:</label>
-          <input type="text" id="Sex" name="Sex" />
-        </div>
-        <div>
-          <label htmlFor="School">Trường:</label>
-          <input type="text" id="School" name="School" />
-        </div>
-        <div>
-          <label htmlFor="Major">Major:</label>
-          <input type="text" id="Major" name="Major" />
-        </div>
-        <button type="submit">Save</button>
-      </form>
+      </div>
+      <div style={{margin: '0 40px'}}>
+        <h2>Add a User</h2>
+        <form onSubmit={handleSubmit} className='form'>
+          <div>
+            <label htmlFor="STT">STT</label>
+            <input type="text" id="STT" name="STT" />
+          </div>
+          <div>
+            <label htmlFor="Name">Name</label>
+            <input type="text" id="Name" name="Name" />
+          </div>
+          <div>
+            <label htmlFor="YearOfBirth">Year Of Birth</label>
+            <input type="text" id="YearOfBirth" name="YearOfBirth" />
+          </div>
+          <div>
+            <label htmlFor="Sex">Sex</label>
+            <input type="text" id="Sex" name="Sex" />
+          </div>
+          <div>
+            <label htmlFor="School">School</label>
+            <input type="text" id="School" name="School" />
+          </div>
+          <div>
+            <label htmlFor="Major">Major</label>
+            <input type="text" id="Major" name="Major" />
+          </div>
+          <button type="submit">Save</button>
+        </form>
+      </div>
     </div>
   );
 }
