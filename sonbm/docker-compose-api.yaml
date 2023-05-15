@@ -12,10 +12,10 @@ services:
         ports: 
             - 5000:5000
         networks:
-            - btvn_default
+            - sonbm_default
 volumes:
     mongodata:
 
 networks:
-    btvn_default:
+    sonbm_default:
         external: true 

@@ -11,12 +11,12 @@ services:
         #     MONGO_INITDB_ROOT_PASSWORD: minhson
         #     MONGO_INITDB_DATABASE: test_database
         networks:
-            - btvn_default
+            - sonbm_default
 volumes:
     mongodata:
-        name: btvn_mongodata
+        name: sonbm_mongodata
         external: true
 
 networks:
-    btvn_default:
+    sonbm_default:
         external: true 

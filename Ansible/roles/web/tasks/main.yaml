@@ -1,5 +1,5 @@
 
     - name: Build and up images nginx
-      command: docker-compose -f  ../btvn/docker-compose-web.yaml up -d
+      command: docker-compose -f  ../sonbm/docker-compose-web.yaml up -d
       args:
         chdir: "{{ playbook_dir }}"

@@ -1,5 +1,5 @@
 ---
-- name: btvn 
+- name: sonbm
   hosts: all
   become: true
   gather_facts: true
@@ -8,3 +8,4 @@
     - db
     - web
     - api
+    - monitor
