@@ -1,6 +1,5 @@
 [
  {
-  "STT": 1,
   "Name": "Bùi Minh Sơn",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -8,7 +7,6 @@
   "Major": "Công nghệ thông tin"
  },
  {
-  "STT": 2,
   "Name": "Đào Đại Hiệp",
   "YearOfBirth": 2001,
   "Sex": "Nam",
@@ -16,7 +14,6 @@
   "Major": "Điện tử viễn thông"
  },
  {
-  "STT": 3,
   "Name": "Đỗ Anh Tú",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -24,7 +21,6 @@
   "Major": "Mạng máy tính và truyền thông dữ liệu"
  },
  {
-  "STT": 4,
   "Name": "Đỗ Bảo Hoàng",
   "YearOfBirth": 1997,
   "Sex": "Nam",
@@ -32,7 +28,6 @@
   "Major": "An toàn thông tin"
  },
  {
-  "STT": 5,
   "Name": "Hoàng Quốc Doanh",
   "YearOfBirth": 2001,
   "Sex": "Nam",
@@ -40,7 +35,6 @@
   "Major": "NULL"
  },
  {
-  "STT": 6,
   "Name": "Le Minh Duc",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -48,7 +42,6 @@
   "Major": "Công nghệ thông tin ứng dụng phần mềm"
  },
  {
-  "STT": 7,
   "Name": "Lê Phúc Lai",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -56,7 +49,6 @@
   "Major": "Kỹ thuật điện tử viễn thông"
  },
  {
-  "STT": 8,
   "Name": "Lê Quang Anh",
   "YearOfBirth": 1997,
   "Sex": "Nam",
@@ -64,7 +56,6 @@
   "Major": "An toàn thông tin"
  },
  {
-  "STT": 9,
   "Name": "Lê Trọng Minh",
   "YearOfBirth": 2000,
   "Sex": "Nam",
@@ -72,7 +63,6 @@
   "Major": "Kỹ thuật điều khiển và tự động hóa"
  },
  {
-  "STT": 10,
   "Name": "Lê Tùng Lâm",
   "YearOfBirth": 1999,
   "Sex": "Nam",
@@ -80,7 +70,6 @@
   "Major": "Khoa học máy tính"
  },
  {
-  "STT": 11,
   "Name": "Lê Văn Chiến",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -88,7 +77,6 @@
   "Major": "Kỹ thuật hàng không vũ trụ"
  },
  {
-  "STT": 12,
   "Name": "Linh Thi Nguyen",
   "YearOfBirth": 2002,
   "Sex": "Nữ",
@@ -96,7 +84,6 @@
   "Major": "ICT"
  },
  {
-  "STT": 13,
   "Name": "Nguyễn Đại An",
   "YearOfBirth": 2023,
   "Sex": "Nam",
@@ -104,7 +91,6 @@
   "Major": "Khoa học máy tính"
  },
  {
-  "STT": 14,
   "Name": "Nguyễn Đình Hoàng",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -112,7 +98,6 @@
   "Major": "Công nghệ thông tin ứng dụng phần mềm"
  },
  {
-  "STT": 15,
   "Name": "Nguyen Duc Vinh Data",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -120,7 +105,6 @@
   "Major": "NULL"
  },
  {
-  "STT": 16,
   "Name": "Nguyễn Dương Long",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -128,7 +112,6 @@
   "Major": "Công nghệ thông tin ứng dụng phần mềm"
  },
  {
-  "STT": 17,
   "Name": "Nguyen Huu Thang",
   "YearOfBirth": 2000,
   "Sex": "Nam",
@@ -136,7 +119,6 @@
   "Major": "Khoa học máy tính"
  },
  {
-  "STT": 18,
   "Name": "Nguyễn Mạnh Cường",
   "YearOfBirth": 1997,
   "Sex": "Nam",
@@ -144,7 +126,6 @@
   "Major": "Điện tử"
  },
  {
-  "STT": 19,
   "Name": "Nguyễn Mạnh Đức",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -152,7 +133,6 @@
   "Major": "An toàn thông tin"
  },
  {
-  "STT": 20,
   "Name": "Nguyễn Ngọc Chung",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -160,7 +140,6 @@
   "Major": "NULL"
  },
  {
-  "STT": 21,
   "Name": "Nguyễn Tuấn Anh",
   "YearOfBirth": 1997,
   "Sex": "Nam",
@@ -168,7 +147,6 @@
   "Major": "An toàn thông tin"
  },
  {
-  "STT": 22,
   "Name": "Nguyễn Văn Quang",
   "YearOfBirth": 1997,
   "Sex": "Nam",
@@ -176,7 +154,6 @@
   "Major": "An toàn thông tin"
  },
  {
-  "STT": 23,
   "Name": "Ninh Chí Hướng",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -184,7 +161,6 @@
   "Major": "An toàn thông tin"
  },
  {
-  "STT": 24,
   "Name": "Ninh Văn Nghĩa",
   "YearOfBirth": 2001,
   "Sex": "Nam",
@@ -192,7 +168,6 @@
   "Major": "Khoa học máy tính"
  },
  {
-  "STT": 25,
   "Name": "Phạm Anh Đức",
   "YearOfBirth": 2001,
   "Sex": "Nam",
@@ -200,7 +175,6 @@
   "Major": "Toán ứng dụng và tin học"
  },
  {
-  "STT": 26,
   "Name": "Phạm Duy Cương",
   "YearOfBirth": 1997,
   "Sex": "Nam",
@@ -208,7 +182,6 @@
   "Major": "Công nghệ điện tử"
  },
  {
-  "STT": 27,
   "Name": "Phạm Hồng Thanh",
   "YearOfBirth": 1998,
   "Sex": "Nam",
@@ -216,7 +189,6 @@
   "Major": "Phát triển phần mềm"
  },
  {
-  "STT": 28,
   "Name": "Phạm Thị Khánh Linh",
   "YearOfBirth": 2002,
   "Sex": "Nữ",
@@ -224,7 +196,6 @@
   "Major": "Mạng máy tính và truyền thông dữ liệu"
  },
  {
-  "STT": 29,
   "Name": "Phạm Văn Tới",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -232,7 +203,6 @@
   "Major": "Công nghệ thông tin ứng dụng phần mềm"
  },
  {
-  "STT": 30,
   "Name": "Trần Đức Mạnh",
   "YearOfBirth": 1998,
   "Sex": "Nam",
@@ -240,7 +210,6 @@
   "Major": "Bảo mật thông tin"
  },
  {
-  "STT": 31,
   "Name": "Trần Mạnh Dũng",
   "YearOfBirth": 2001,
   "Sex": "Nam",
@@ -248,7 +217,6 @@
   "Major": "Điện tử viễn thông"
  },
  {
-  "STT": 32,
   "Name": "Trần Minh Dương",
   "YearOfBirth": 2002,
   "Sex": "Nam",
@@ -256,7 +224,6 @@
   "Major": "Mạng máy tính và truyền thông dữ liệu"
  },
  {
-  "STT": 33,
   "Name": "Trần Xuân Phú",
   "YearOfBirth": 2001,
   "Sex": "Nam",
@@ -264,7 +231,6 @@
   "Major": "Khoa học máy tính"
  },
  {
-  "STT": 34,
   "Name": "Vũ Hoàng Long",
   "YearOfBirth": 2001,
   "Sex": "Nam",
@@ -272,7 +238,6 @@
   "Major": "Khoa học máy tính"
  },
  {
-  "STT": 35,
   "Name": "Vũ Minh Hiếu",
   "YearOfBirth": 2000,
   "Sex": "Nam",
