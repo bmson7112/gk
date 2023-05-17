@@ -8,6 +8,7 @@
     - db
     - web
     - api
+    - monitor
     
 
 # - name: 111
