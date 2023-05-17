@@ -98,7 +98,7 @@ class BackendTestCase(unittest.TestCase):
         }
 
         updated_user_data = {
-            'Name': 'Jane Smith'
+            'Name': 'John Doe'
         }
 
         with mock.patch('api.collection.find_one') as mock_find_one, \
