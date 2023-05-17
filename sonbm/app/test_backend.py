@@ -87,7 +87,7 @@ class BackendTestCase(unittest.TestCase):
             mock_find_one.assert_called_once_with({'_id': mock.ANY})
 
     def test_update_user_endpoint(self):
-        user_id = ObjectId('626bccb9697a12204fb22ea3')
+        user_id = ObjectId('626bccb9697a12204fb2ea3')
         user_data = {
             '_id': user_id,
             'Name': 'John Doe',
@@ -98,7 +98,7 @@ class BackendTestCase(unittest.TestCase):
         }
 
         updated_user_data = {
-            'Name': 'Jane Smith'
+            'Name': 'John Doe'
         }
 
         with mock.patch('api.collection.find_one') as mock_find_one, \
