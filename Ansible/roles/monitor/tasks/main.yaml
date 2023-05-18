@@ -40,8 +40,3 @@
     restart_policy: always
 
 
-
-# - name: Copy Prometheus configuration file
-#   copy:
-#     src: ./roles/monitor/prometheus/prometheus.yml
-#     dest: /etc/prometheus/prometheus.yml

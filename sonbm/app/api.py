@@ -12,7 +12,7 @@ collection = db.attendees  # Thay đổi tên collection
 
 @app.route('/')
 def VDT():
-    return "Bui Minh Son - VDT" 
+    return "Bui Minh Son - VDT - 11" 
 
 @app.route('/users')
 def users():

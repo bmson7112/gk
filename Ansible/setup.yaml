@@ -9,7 +9,7 @@
     - web
     - api
     - monitor
-    
+    - lb
 
 # - name: 111
 #   hosts: localhost
