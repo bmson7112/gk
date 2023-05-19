@@ -12,7 +12,8 @@ collection = db.attendees  # Thay đổi tên collection
 
 @app.route('/')
 def VDT():
-    return "Bui Minh Son - VDT - 11" 
+    ip_address = request.remote_addr
+    return f"Bui Minh Son - VDT - 11\nYour IP address is: {ip_address}"
 
 @app.route('/users')
 def users():

@@ -1,5 +1,26 @@
+- name: Check if docker network exists
+  docker_network_info:
+    name: sonbm_default
+  register: docker_network
+  become: true
 
-    - name: Build and up images nginx
-      command: docker-compose -f  ../sonbm/docker-compose-web.yaml up -d
-      args:
-        chdir: "{{ playbook_dir }}"
+- name: Create docker network
+  docker_network:
+    name: sonbm_default
+    state: present
+  when: docker_network.exists == false
+  become: true
+
+- name: Run docker image minhson7112/sonbm-frontend:latest
+  docker_container:
+    name: frontend
+    image: minhson7112/sonbm-frontend:latest
+    restart_policy: unless-stopped
+    networks:
+      - name: "sonbm_default"
+    hostname: frontend
+    env:
+      REACT_APP_BACKEND_URL: "192.168.69.96:5000"
+    ports:
+      - "3000:80"
+  become: true
