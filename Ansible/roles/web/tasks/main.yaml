@@ -20,7 +20,7 @@
       - name: "sonbm_default"
     hostname: frontend
     env:
-      REACT_APP_BACKEND_URL: "192.168.69.96:5000"
+      REACT_APP_BACKEND_URL: "192.168.201.96:5000"
     ports:
       - "3000:80"
   become: true

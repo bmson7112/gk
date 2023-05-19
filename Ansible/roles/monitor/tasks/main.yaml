@@ -38,5 +38,5 @@
     command:
             - '--config.file=/etc/prometheus/prometheus.yml'
     restart_policy: always
-
+  when: inventory_hostname == "localhost"
 

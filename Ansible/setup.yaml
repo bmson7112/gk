@@ -4,12 +4,19 @@
   become: true
   gather_facts: true
   roles:
-    # - common
+    - common
     - db
     - web
     - api
     - monitor
+- name: log
+  hosts: localhost
+  become: true
+  gather_facts: true
+  roles:
     - lb
+    - logging
+
 
 # - name: 111
 #   hosts: localhost

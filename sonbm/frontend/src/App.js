@@ -13,7 +13,7 @@ function App() {
   const [selectedUserId, setSelectedUserId] = useState(null);
 
 
-  const backendURL = process.env.REACT_APP_BACKEND_URL || "http://192.168.69.96:5001";
+  const backendURL = process.env.REACT_APP_BACKEND_URL || "http://192.168.201.96:5001";
   useEffect(() => {
     axios.get(`${backendURL}/users`)
       .then((res) => {
