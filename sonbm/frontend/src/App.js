@@ -13,7 +13,7 @@ function App() {
   const [selectedUserId, setSelectedUserId] = useState(null);
 
 
-  const backendURL = process.env.REACT_APP_BACKEND_URL || "http://192.168.201.96:5001";
+  const backendURL = process.env.REACT_APP_BACKEND_URL || "http://192.168.16.96:5001";
   useEffect(() => {
     axios.get(`${backendURL}/users`)
       .then((res) => {
@@ -232,32 +232,32 @@ function App() {
         </div>
       )}
       <div style={{ margin: '0 40px' }}>
-        <h2>Add a User</h2>
-        <Form onSubmit={handleSubmit} className='form'>
+  <h2>Add a User</h2>
+  <Form onSubmit={handleSubmit} className='form'>
 
-          <Form.Group>
-            <Form.Label htmlFor="Name">Name</Form.Label>
-            <Form.Control type="text" id="Name" name="Name" />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor="YearOfBirth">Year Of Birth</Form.Label>
-            <Form.Control type="text" id="YearOfBirth" name="YearOfBirth" />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor="Sex">Sex</Form.Label>
-            <Form.Control type="text" id="Sex" name="Sex" />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor="School">School</Form.Label>
-            <Form.Control type="text" id="School" name="School" />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor="Major">Major</Form.Label>
-            <Form.Control type="text" id="Major" name="Major" />
-          </Form.Group>
-          <Button type="submit" variant="primary">Save</Button>
-        </Form>
-      </div>
+    <Form.Group>
+      <Form.Label className="form-label" htmlFor="Name">Name</Form.Label>
+      <Form.Control className="form-control" type="text" id="Name" name="Name" />
+    </Form.Group>
+    <Form.Group>
+      <Form.Label className="form-label" htmlFor="YearOfBirth">Year Of Birth</Form.Label>
+      <Form.Control className="form-control" type="text" id="YearOfBirth" name="YearOfBirth" />
+    </Form.Group>
+    <Form.Group>
+      <Form.Label className="form-label" htmlFor="Sex">Sex</Form.Label>
+      <Form.Control className="form-control" type="text" id="Sex" name="Sex" />
+    </Form.Group>
+    <Form.Group>
+      <Form.Label className="form-label" htmlFor="School">School</Form.Label>
+      <Form.Control className="form-control" type="text" id="School" name="School" />
+    </Form.Group>
+    <Form.Group>
+      <Form.Label className="form-label" htmlFor="Major">Major</Form.Label>
+      <Form.Control className="form-control" type="text" id="Major" name="Major" />
+    </Form.Group>
+    <Button className="form-button" type="submit" variant="primary">Save</Button>
+  </Form>
+</div>
     </div>
   );
 }

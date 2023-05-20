@@ -27,11 +27,11 @@ jobs:
         with:
           context: "{{defaultContext}}:sonbm/app"
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/sonbm-app:latest,${{ secrets.DOCKERHUB_USERNAME }}/sonbm-app:${{  github.ref_name }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/sonbm-app:${{  github.ref_name }}
           
       - name: Build and push Frontend Docker image
         uses: docker/build-push-action@v4
         with:
           context: "{{defaultContext}}:sonbm/frontend"
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/sonbm-frontend:latest  
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/sonbm-frontend:${{  github.ref_name }}
