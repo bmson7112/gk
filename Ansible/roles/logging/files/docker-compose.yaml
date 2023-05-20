@@ -6,3 +6,6 @@ services:
     volumes:
         - ./fluentd/conf:/fluentd/etc
     network_mode: "sonbm_default"
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"

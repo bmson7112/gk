@@ -1,19 +1,28 @@
 ---
+# - name: log
+#   hosts: localhost
+#   become: true
+#   gather_facts: true
+#   roles:
+#     - logging
+
+
+
 - name: sonbm
   hosts: all
   become: true
   gather_facts: true
   roles:
-    - common
-    - db
-    - web
-    - api
+    # - common
+    # - db
+    # - web
+    # - api
     - monitor
-- name: log
-  hosts: localhost
-  become: true
-  gather_facts: true
-  roles:
-    - lb
-    - logging
+
+# - name: lb
+#   hosts: localhost
+#   become: true
+#   gather_facts: true
+#   roles:
+#     - lb
 
