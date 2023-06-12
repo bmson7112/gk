@@ -6,7 +6,7 @@ from bson import ObjectId
 app = Flask(__name__)
 CORS(app)
 
-client = MongoClient('mongodb://mongodb:27017/')  # Thay đổi URI để kết nối với container MongoDB
+client = MongoClient('mongodb://10.96.252.235:27017/')  # Thay đổi URI để kết nối với container MongoDB
 db = client.test_database
 collection = db.attendees  # Thay đổi tên collection
 
